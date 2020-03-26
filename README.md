@@ -70,7 +70,7 @@ http://fangkong.hnu.edu.cn/api/v1/clockinlog/add
 1.本地安装宝塔面板windows，安装nginx，在默认主机下设置nginx反向代理，并设置内容替换：
 代理名称:随便填
 目标URL：http://fangkong.hnu.edu.cn 发送域名：fangkong.hnu.edu.cn
-内容替换：<script src=static/js/app.c99fa379.js>   替换为 <script src="http://127.0.0.1/js/app.js">
+内容替换：<script src=static/js/app.c99fa379.js>   替换为 <script src="http://127.0.0.1:81/js/app.js">
 
 2.新建网站，端口为81.
 把app.c99fa379.js Copy到新建网站目录/js/app.js，用文本编辑器打开，修改上述三项信息，比如
