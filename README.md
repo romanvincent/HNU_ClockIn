@@ -1,5 +1,5 @@
 # HNU_ClockIn
-使用Python+Selenium进行自动打卡
+使用Python+Selenium进行HNU疫情防控自动打卡
 
 
 
@@ -91,7 +91,8 @@ Chromedriver下载地址：http://npm.taobao.org/mirrors/chromedriver/
 
 
 
-
+## 支持
+如有任何问题，欢迎发issue提问，有时间的话，我会手把手教[doge]
 
 
 
