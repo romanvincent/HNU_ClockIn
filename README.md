@@ -5,14 +5,24 @@
 
 
 ## 前情
+
 公元2020年上半年
+
 COVID-19荼毒中华大地
+
 众多湖大学子转校加里敦
+
 为了使“早起”的各位同学
+
 不需要因为忘记打卡而烦恼
+
 我特此编写如下自动打卡脚本
+
 一次运行，无人值守。
+
 *仅供交流学习，由此出现的任何问题，与本人无关
+
+*代码有不完善之处，请大佬尽管喷
 
 ## 技术栈
 Nginx反向代理；
@@ -57,11 +67,13 @@ http://fangkong.hnu.edu.cn/api/v1/clockinlog/add
 
 ## 步骤:
 
-1.本地安装宝塔面板windows，设置nginx反向代理，并设置内容替换：
+1.本地安装宝塔面板windows，安装nginx，在默认主机下设置nginx反向代理，并设置内容替换：
+代理名称:随便填
+目标URL：http://fangkong.hnu.edu.cn 发送域名：fangkong.hnu.edu.cn
+内容替换：<script src=static/js/app.c99fa379.js>   替换为 <script src="http://127.0.0.1/js/app.js">
 
-sub_filter '<script src=static/js/app.c99fa379.js>' '<script src="127.0.0.1/js/app.js">';
-    
-2.把app.c99fa379.js Copy到本地网站默认目录/js/app.js，用文本编辑器打开，修改上述三项信息，比如
+2.新建网站，端口为81.
+把app.c99fa379.js Copy到新建网站目录/js/app.js，用文本编辑器打开，修改上述三项信息，比如
 
 	RealProvince:"湖南省",
 	
@@ -70,9 +82,11 @@ sub_filter '<script src=static/js/app.c99fa379.js>' '<script src="127.0.0.1/js/a
 	RealCounty:"岳麓区",
 	
 
-3.安装python运行环境，下载Chrome浏览器或国产双核浏览器以及相应版本的Chromedriver
+3.安装python运行环境，下载Chrome浏览器或国产双核浏览器以及相应版本的Chromedriver。
+Chromedriver下载地址：http://npm.taobao.org/mirrors/chromedriver/
+注意：要查看你的浏览器Chrome内核版本号。方法：点击浏览器的帮助->关于，大概率会出现，比如是78,就下载chromedriver 78开头的driver
 
-4.按照源代码提示进行修改运行即可。
+4.按照源代码提示进行修改并运行即可。
 
 
 
